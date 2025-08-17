@@ -1,0 +1,221 @@
+nom,tipus,cat,elem
+Archimago,Elite,Avatar,DB
+Witch,Unique,Avatar,DB
+A Midsummer Night's Dream,Unique,Spell,Air
+Castle's Ablaze!,Elite,Spell,Fire
+Hamlet's Ablaze!,Ordinary,Spell,Fire
+Invasion,Elite,Spell,Fire
+Sylvan Splendor,Elite,Spell,Water
+The Black Plague,Unique,Spell,Air
+The Great Drowning of Men,Unique,Spell,Water
+The Great Famine,Unique,Spell,Fire
+Wall of Brambles,Ordinary,Spell,Earth
+Year of the Blaze,Unique,Spell,Fire
+13 Treasures of Britain,Unique,Spell,DB
+Amulet of Niniane,Unique,Spell,DB
+Bailey,Exceptional,Spell,DB
+Cold Iron Rod,Exceptional,Spell,DB
+Excalibur,Unique,Spell,DB
+Fail-not Bow,Unique,Spell,DB
+Four Waters of Paradise,Unique,Spell,DB
+Fourberie Knot,Exceptional,Spell,DB
+Golden Harp,Elite,Spell,DB
+Goswhit Helmet,Elite,Spell,DB
+Grim Guisarme,Elite,Spell,DB
+Horn of Caerleon,Elite,Spell,DB
+Iron Man Talus,Exceptional,Spell,DB
+Just a Rock,Ordinary,Spell,DB
+Love Potion,Elite,Spell,DB
+Merlin's Staff,Unique,Spell,DB
+Pendragon Banner,Elite,Spell,DB
+Rhongomyniad,Unique,Spell,DB
+Ring of Morrigan,Unique,Spell,DB
+Sword and Shield,Exceptional,Spell,DB
+The Round Table,Unique,Spell,DB
+Band of Thieves,Ordinary,Spell,Air
+Black Knight,Exceptional,Spell,"Fire, Water"
+Blacksmith Family,Ordinary,Spell,Fire
+Blue Knight,Exceptional,Spell,"Air, Water"
+Bluecap Knockers,Exceptional,Spell,Earth
+Blunderbore,Unique,Spell,Fire
+Boudicca,Unique,Spell,Fire
+Brother Knight,Elite,Spell,Fire
+Brown Bears,Ordinary,Spell,Earth
+Castle Haunt,Exceptional,Spell,Air
+Castle Servants,Ordinary,Spell,Air
+Common Cottagers,Ordinary,Spell,Earth
+Coy Nixie,Exceptional,Spell,Water
+Dame Britomart,Unique,Spell,"Air, Earth, Water"
+Dirium Fomorians,Exceptional,Spell,Earth
+Field Laborers,Ordinary,Spell,Earth
+Fine Courser,Exceptional,Spell,Air
+Finwife,Ordinary,Spell,Water
+Fisherman's Family,Ordinary,Spell,Water
+Frisky Red Squirrel,Exceptional,Spell,Earth
+Giant Killer,Exceptional,Spell,Water
+Grain Sparrow,Ordinary,Spell,Earth
+Grand Old Boar,Elite,Spell,Earth
+Harassing Ruffians,Ordinary,Spell,Fire
+Helpful Hob,Ordinary,Spell,Water
+Hunting Party,Exceptional,Spell,Earth
+Hyter Sprites,Ordinary,Spell,Air
+Keening Banshee,Ordinary,Spell,Air
+Kettletop Leprechaun,Ordinary,Spell,Earth
+King Arthur,Unique,Spell,"Air, Earth, Fire, Water"
+Kingswood Poachers,Exceptional,Spell,Water
+Lady Iseult,Unique,Spell,Earth
+Lake Afanc,Ordinary,Spell,Water
+Lugbog Cat,Exceptional,Spell,Water
+Lumbering Giant,Ordinary,Spell,Fire
+Merlin,Unique,Spell,Air
+Mester Stoor Worm,Elite,Spell,Water
+Monstrous Lion,Elite,Spell,Fire
+Morgana le Fay,Unique,Spell,Fire
+Muirid Fomorians,Exceptional,Spell,Water
+Nelly Longarms,Unique,Spell,Water
+Ominous Owl,Ordinary,Spell,Air
+Overbearing Bailiff,Elite,Spell,Earth
+Pigs of the Sounder,Exceptional,Spell,Earth
+Pookas,Exceptional,Spell,Fire
+Purple Knight,Exceptional,Spell,"Air, Fire"
+Queen Guinevere,Unique,Spell,"Air, Earth, Fire, Water"
+Questing Beast,Unique,Spell,Water
+Rebecks,Unique,Spell,Fire
+Reckless Squire,Ordinary,Spell,Fire
+Redbreast Robin,Ordinary,Spell,Fire
+Redcap Powries,Exceptional,Spell,Fire
+Rhitta Gawr of Snowdonia,Unique,Spell,Earth
+Ribble Boggart,Elite,Spell,Water
+Salmon of Knowledge,Elite,Spell,Water
+Saracen Raiders,Exceptional,Spell,Fire
+Saracen Scout,Ordinary,Spell,Fire
+Seelie Court,Elite,Spell,Water
+Shameless Squire,Ordinary,Spell,Water
+Shellycoat,Ordinary,Spell,Water
+Sherwood Huntress,Ordinary,Spell,Air
+Siege Giant,Exceptional,Spell,Fire
+Sir Agravaine,Unique,Spell,"Fire, Water"
+Sir Balin,Unique,Spell,"Air, Fire"
+Sir Bedivere,Unique,Spell,"Earth, Water"
+Sir Bors the Younger,Unique,Spell,"Air, Earth"
+Sir Gaheris,Unique,Spell,"Earth, Water"
+Sir Galahad,Unique,Spell,"Air, Earth"
+Sir Gareth,Unique,Spell,"Air, Water"
+Sir Gawain,Unique,Spell,"Earth, Fire, Water"
+Sir Ironside,Unique,Spell,"Earth, Water"
+Sir Kay,Unique,Spell,"Air, Earth, Fire"
+Sir Lamorak,Unique,Spell,"Air, Fire"
+Sir Lancelot,Unique,Spell,"Earth, Fire"
+Sir Mordred,Unique,Spell,"Earth, Water"
+Sir Morien,Unique,Spell,"Earth, Fire"
+Sir Pelleas,Unique,Spell,"Air, Water"
+Sir Pellinore,Unique,Spell,"Air, Fire"
+Sir Perceval,Unique,Spell,"Air, Earth"
+Sir Priamus,Unique,Spell,"Earth, Fire"
+Sir Tom Thumb,Unique,Spell,"Air, Water"
+Sir Tristan,Unique,Spell,"Air, Fire,Water"
+Sir Yvain,Unique,Spell,"Earth, Water"
+Sisters of Avalon,Exceptional,Spell,Air
+Sly Fox,Ordinary,Spell,Water
+Spearmarshal,Elite,Spell,Earth
+Squeakers,Ordinary,Spell,Earth
+Sugarplum Pixies,Exceptional,Spell,Water
+Swindler Troupe,Ordinary,Spell,Water
+Tax Collector,Ordinary,Spell,Earth
+Thankless Squire,Ordinary,Spell,Earth
+The Faerie Queene,Unique,Spell,Air
+The Green Knight,Unique,Spell,Water
+The Lady of the Lake,Unique,Spell,Water
+The Ninth Legion,Unique,Spell,Air
+The Wild Hunt,Elite,Spell,Air
+Thieving Magpie,Ordinary,Spell,Water
+Thundering Giant,Elite,Spell,Air
+Tooth Faeries,Exceptional,Spell,Air
+Unseelie Court,Elite,Spell,Air
+Vengeful Heir,Elite,Spell,Fire
+Verdant Knight,Exceptional,Spell,"Earth, Water"
+Vikings,Ordinary,Spell,Fire
+Vivien the Enchantress,Unique,Spell,Earth
+War Horse,Exceptional,Spell,Fire
+Weightless Squire,Ordinary,Spell,Air
+White Hart,Unique,Spell,Earth
+White Knight,Exceptional,Spell,"Air, Earth"
+Wolpertinger,Elite,Spell,Earth
+Wyvern,Exceptional,Spell,Earth
+Yellow Knight,Exceptional,Spell,"Earth, Fire"
+Arc Lightning,Ordinary,Spell,Air
+Arcane Barrage,Elite,Spell,Air
+Attack by Night,Exceptional,Spell,Air
+Ball Lightning,Elite,Spell,Air
+Burning Hands,Ordinary,Spell,Fire
+Cast into Exile,Exceptional,Spell,Air
+Charge,Ordinary,Spell,Fire
+Degradation,Exceptional,Spell,Water
+Duel,Ordinary,Spell,Earth
+Feast for Crows,Unique,Spell,Air
+Firebreathing,Exceptional,Spell,Fire
+Grievous Insult,Ordinary,Spell,Water
+Guards!,Elite,Spell,Earth
+Joust!,Ordinary,Spell,Fire
+King's Council,Elite,Spell,Air
+Knighthood,Exceptional,Spell,Earth
+Lava Flow,Exceptional,Spell,Fire
+Led Astray,Ordinary,Spell,Water
+Magic Missiles,Ordinary,Spell,Air
+Mesmerism,Unique,Spell,Water
+Peasant Revolt,Unique,Spell,Fire
+Pendragon Legacy,Unique,Spell,Earth
+Power of Flight,Ordinary,Spell,Air
+Rescue,Ordinary,Spell,Earth
+Shapeshift,Elite,Spell,Water
+Shatter Strike,Exceptional,Spell,Fire
+Snowball,Exceptional,Spell,Water
+Stone Rain,Exceptional,Spell,Earth
+Tactical Move,Ordinary,Spell,Air
+Tithe,Unique,Spell,Earth
+Valor,Elite,Spell,Earth
+Vanishment,Exceptional,Spell,Air
+Whirlwind,Exceptional,Spell,Air
+Annual Fair,Exceptional,Site,DB
+Avalon,Unique,Site,DB
+Babbling Brook,Exceptional,Site,DB
+Beacon,Exceptional,Site,DB
+Bog,Ordinary,Site,DB
+Bonfire,Ordinary,Site,DB
+Bower of Bliss,Unique,Site,DB
+Briar Patch,Exceptional,Site,DB
+Broceliande,Unique,Site,DB
+Caerleon-Upon-Usk,Unique,Site,DB
+Camelot,Unique,Site,DB
+Common Village,Ordinary,Site,DB
+Cursed Land,Elite,Site,DB
+Dozmary Pool,Unique,Site,DB
+Fae City,Exceptional,Site,DB
+Fields of Camlann,Unique,Site,DB
+Forge,Ordinary,Site,DB
+Funeral Pyre,Exceptional,Site,DB
+Glastonbury Tor,Unique,Site,DB
+Hamlet,Ordinary,Site,DB
+Hunter's Lodge,Ordinary,Site,DB
+Impenetrable Copse,Exceptional,Site,DB
+Joyous Garde,Unique,Site,DB
+Kelp Cavern,Elite,Site,DB
+Leyline Henge,Ordinary,Site,DB
+Lookout,Ordinary,Site,DB
+Major City,Elite,Site,DB
+Merlin's Tower,Unique,Site,DB
+Pebbled Paths,Exceptional,Site,DB
+Perilous Bridge,Elite,Site,DB
+Poisoned Well,Exceptional,Site,DB
+Pond,Ordinary,Site,DB
+Postern Gate,Elite,Site,DB
+Tintagel,Unique,Site,DB
+Tournament Grounds,Exceptional,Site,DB
+Town,Exceptional,Site,DB
+Treetop Hideout,Ordinary,Site,DB
+Troll Bridge,Exceptional,Site,DB
+Valley of Delight,Elite,Site,DB
+Varmint Warrens,Elite,Site,DB
+Wedding Hall,Elite,Site,DB
+Wizard's Den,Elite,Site,DB
+Wormelow Tump,Unique,Site,DB

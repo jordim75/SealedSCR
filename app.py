@@ -81,7 +81,7 @@ def sobres(n):
 def export_xlsx(jocs, sobres):
     wb = Workbook()
     # Prioritat dels elements
-    elem_order = {"DB": 0, "Air": 1, "Earth": 2, "Fire": 3, "Water": 4}
+    elem_order = {"DB": 0, "Air": 1, "Earth": 2, "Fire": 3, "Water": 4, "MC": 5}
 
     for jugador in range(1, jocs+1):
         # Crear full per cada jugador

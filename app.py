@@ -77,7 +77,7 @@ def index():
 def sobres(n):
     return jsonify([generar_sobre() for _ in range(n)])
 
-@app.route("/export_xlsx/<int:jocs>/<int:sobres>")
+@app.route("/export_xlsx/<int:jocs>/<int:n1>/<int:n2>")
 def export_xlsx(jocs, sobres):
     wb = Workbook()
     # Prioritat dels elements

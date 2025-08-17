@@ -1,51 +1,74 @@
 <!DOCTYPE html>
 <html lang="ca">
 <head>
-  <meta charset="UTF-8">
-  <title>Obrir sobres de cartes</title>
+  <meta charset="UTF-8" />
+  <title>Generador de sobres</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
-    select, button { padding: 10px; font-size: 16px; margin: 10px; }
-    .sobre { border: 1px solid #ccc; border-radius: 8px; margin: 10px; padding: 10px; display: inline-block; vertical-align: top; }
-    ul { list-style: none; padding: 0; }
-    li { padding: 3px; margin: 2px; border-bottom: 1px solid #eee; }
+    body { font-family: system-ui, Arial, sans-serif; padding: 24px; max-width: 700px; margin: auto; }
+    h1 { margin-bottom: 8px; }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 8px 0; }
+    label { font-weight: 600; }
+    select, input { width: 100%; padding: 10px; font-size: 16px; }
+    button { padding: 10px 16px; font-size: 16px; cursor: pointer; margin-top: 12px; }
+    .status { margin-top: 8px; font-weight: 600; }
   </style>
 </head>
 <body>
-  <h1>Generate Booster Packs</h1>
+  <h1> SCR  -	Massive booster pack for Sealed Generator</h1>
+  <p>Each player has exactly <strong>6 booster packs</strong>. Choose how many from Beta.</p>
 
-  <label for="jugadors">Players:</label>
-  <select id="jugadors">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-    <option value="6">6</option>
-</select>
+  <div class="row">
+    <div>
+      <label for="jugadors">Players</label>
+      <select id="jugadors">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4" selected>4</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+      </select>
+    </div>
+    <div>
+      <label for="nType1">Beta packs (per player)</label>
+      <input id="nType1" type="number" min="0" max="6" value="3" />
+    </div>
+  </div>
 
-  <label for="sobres"># of Booster Packs:</label>
-  <select id="sobres">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-    <option value="6">6</option>
-  </select>
+  <div id="status" class="status"></div>
 
-  
-  <button onclick="exportarXLSX()">XLSX DownLoad</button>
-
-  <div id="resultat"></div>
+  <button id="exportXlsxBtn">Download XLSX</button>
 
   <script>
-    
-         function exportarXLSX() {
-    const j = document.getElementById("jugadors").value;
-    const s = document.getElementById("sobres").value;
-    window.location.href = `/export_xlsx/${j}/${s}`;
-  }
+    const jugadorsEl = document.getElementById('jugadors');
+    const n1El = document.getElementById('nType1');
+    const statusEl = document.getElementById('status');
+    const exportBtn = document.getElementById('exportXlsxBtn');
+
+    function updateStatus() {
+      const n1 = parseInt(n1El.value || '0', 10);
+      const n2 = 6 - n1;
+      if (n1 < 0 || n1 > 6) {
+        statusEl.textContent = "❌ The number of Beta Booster packs has to be between [0-6].";
+        statusEl.style.color = "red";
+        exportBtn.disabled = true;
+      } else {
+        statusEl.textContent = `✅ Each player have ${n1} Beta Booster Packs and ${n2} AL booster Packs (total 6).`;
+        statusEl.style.color = "green";
+        exportBtn.disabled = false;
+      }
+    }
+
+    n1El.addEventListener('input', updateStatus);
+    updateStatus();
+
+    exportBtn.addEventListener('click', () => {
+      const j = parseInt(jugadorsEl.value, 10);
+      const n1 = parseInt(n1El.value, 10);
+      const n2 = 6 - n1;
+      window.location.href = `/export_xlsx/${j}/${n1}/${n2}`;
+    });
   </script>
 </body>
 </html>

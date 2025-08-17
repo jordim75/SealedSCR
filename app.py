@@ -6,67 +6,55 @@ from openpyxl import Workbook
 app = Flask(__name__)
 
 # Carregar les cartes des del CSV
-cartes_df = pd.read_csv("FontBeta.csv")
-cartes_df_AL = pd.read_csv("FontAL.csv")
+cartes_dfBeta = pd.read_csv("FontBeta.csv")
+cartes_dfAL = pd.read_csv("FontAL.csv")
 
 # Separar cartes segons tipus
-cartes_per_tipus = {
-    "Ordinary": cartes_df[cartes_df["tipus"] == "Ordinary"].to_dict(orient="records"),
-    "Booster": cartes_df[cartes_df["tipus"] == "Booster"].to_dict(orient="records"),
-    "BoosterAvatar": cartes_df[cartes_df["tipus"] == "BoosterAvatar"].to_dict(orient="records"),
-    "Exceptional": cartes_df[cartes_df["tipus"] == "Exceptional"].to_dict(orient="records"),
-    "Elite": cartes_df[cartes_df["tipus"] == "Elite"].to_dict(orient="records"),
-    "Unique": cartes_df[cartes_df["tipus"] == "Unique"].to_dict(orient="records"),
+cartes_Beta = {
+    "Ordinary": cartes_dfBeta[cartes_dfBeta["tipus"] == "Ordinary"].to_dict(orient="records"),
+    "Booster": cartes_dfBeta[cartes_dfBeta["tipus"] == "Booster"].to_dict(orient="records"),
+    "BoosterAvatar": cartes_dfBeta[cartes_dfBeta["tipus"] == "BoosterAvatar"].to_dict(orient="records"),
+    "Exceptional": cartes_dfBeta[cartes_dfBeta["tipus"] == "Exceptional"].to_dict(orient="records"),
+    "Elite": cartes_dfBeta[cartes_dfBeta["tipus"] == "Elite"].to_dict(orient="records"),
+    "Unique": cartes_dfBeta[cartes_dfBeta["tipus"] == "Unique"].to_dict(orient="records"),
+}
+cartes_AL = {
+    "Ordinary": cartes_dfAL[cartes_dfAL["tipus"] == "Ordinary"].to_dict(orient="records"),
+    "Exceptional": cartes_dfAL[cartes_dfAL["tipus"] == "Exceptional"].to_dict(orient="records"),
+    "Elite": cartes_dfAL[cartes_dfAL["tipus"] == "Elite"].to_dict(orient="records"),
+    "Unique": cartes_dfAL[cartes_dfAL["tipus"] == "Unique"].to_dict(orient="records"),
 }
 
 def generar_sobre_Beta():
     sobre = []
-
     
     # 3 Exceptional
-    sobre.extend(random.sample(cartes_per_tipus["Exceptional"], 3))
-
+    sobre.extend(random.sample(cartes_Beta["Exceptional"], 3))
     # 1 Elite o Unique
     if random.random() < 0.76:  # 76% Elite
-        sobre.append(random.choice(cartes_per_tipus["Elite"]))
+        sobre.append(random.choice(cartes_Beta["Elite"]))
     else:  # 24% Unique
-        sobre.append(random.choice(cartes_per_tipus["Unique"]))
-        
+        sobre.append(random.choice(cartes_Beta["Unique"]))
     # 10 Ordinary
-    sobre.extend(random.sample(cartes_per_tipus["Ordinary"], 10))
-
+    sobre.extend(random.sample(cartes_Beta["Ordinary"], 10))
     # 1 BoosterAvatar or BoosterSite
     if random.random() < 0.05:  # 10% BoosterAvatarElite
-        sobre.append(random.choice(cartes_per_tipus["BoosterAvatar"]))
+        sobre.append(random.choice(cartes_Beta["BoosterAvatar"]))
     else:  # 24% Unique
-        sobre.append(random.choice(cartes_per_tipus["Booster"]))
+        sobre.append(random.choice(cartes_Beta["Booster"]))
     return sobre
     
 def generar_sobre_AL(cartes):
-    """
-    Genera un sobre de tipus 2:
-      - 11 Ordinary
-      - 3 Exceptional
-      - 1 Elite o Unique (81.25% Elite, 18.75% Unique)
-    """
-    sobre = []
-
+        # 3 Exceptional
+    sobre.extend(random.sample(cartes_AL["Exceptional"], 3))
+    # 1 Elite o Unique
+    if random.random() < 0.8:  # 76% Elite
+        sobre.append(random.choice(cartes_AL["Elite"]))
+    else:  # 24% Unique
+        sobre.append(random.choice(cartes_AL["Unique"]))
     # 11 Ordinary
-    ordinary = [c for c in cartes if c["tipus"] == "Ordinary"]
-    sobre.extend(random.sample(ordinary, 11))
-
-    # 3 Exceptional
-    exceptional = [c for c in cartes if c["tipus"] == "Exceptional"]
-    sobre.extend(random.sample(exceptional, 3))
-
-    # 1 Elite o Unique amb probabilitat
-    if random.random() < 0.8125:  # 81.25% Elite
-        elite = [c for c in cartes if c["tipus"] == "Elite"]
-        sobre.append(random.choice(elite))
-    else:  # 18.75% Unique
-        unique = [c for c in cartes if c["tipus"] == "Unique"]
-        sobre.append(random.choice(unique))
-
+    sobre.extend(random.sample(cartes_AL["Ordinary"], 11))
+    
     return sobre
 
 @app.route("/")

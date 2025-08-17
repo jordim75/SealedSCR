@@ -1,0 +1,403 @@
+nom,tipus,cat,elem
+Battlemage,Elite,Avatar,DB
+Deathspeaker,Elite,Avatar,DB
+Elementalist,Elite,Avatar,DB
+Enchantress,Elite,Avatar,DB
+Flamecaller,BoosterAvatar,Avatar,DB
+Geomancer,BoosterAvatar,Avatar,DB
+Pathfinder,Unique,Avatar,DB
+Seer,Elite,Avatar,DB
+Sorcerer,BoosterAvatar,Avatar,DB
+Sparkmage,BoosterAvatar,Avatar,DB
+Waveshaper,BoosterAvatar,Avatar,DB
+Abundance,Elite,Spell,Water
+Atlantean Fate,Unique,Spell,Water
+Blizzard,Ordinary,Spell,Water
+Crusade,Unique,Spell,Earth
+Drought,Exceptional,Spell,Fire
+Entangle Terrain,Ordinary,Spell,Earth
+Evil Presence,Exceptional,Spell,Air
+Flood,Exceptional,Spell,Water
+Jihad,Unique,Spell,Fire
+Mariner’s Curse,Exceptional,Spell,Water
+Rest in Peace,Elite,Spell,Earth
+Sandstorm,Ordinary,Spell,Fire
+Silence,Elite,Spell,Water
+Summoning Sphere,Exceptional,Spell,Air
+Thunderstorm,Exceptional,Spell,Air
+Wall of Air,Ordinary,Spell,Air
+Wall of Fire,Ordinary,Spell,Fire
+Wall of Ice,Ordinary,Spell,Water
+Wildfire,Exceptional,Spell,Fire
+All-terrain Vestments,Elite,Spell,DB
+Amethyst Core,Unique,Spell,DB
+Angel’s Egg,Elite,Spell,DB
+Aquamarine Core,Unique,Spell,DB
+Battering Ram,Exceptional,Spell,DB
+Belfry,Elite,Spell,DB
+Black Obelisk,Elite,Spell,DB
+Blasted Oak,Unique,Spell,DB
+Buried Treasure,Exceptional,Spell,DB
+Chains of Prometheus,Elite,Spell,DB
+Crave Golem,Exceptional,Spell,DB
+Crown of the Victor,Unique,Spell,DB
+Devil’s Egg,Elite,Spell,DB
+Doomsday Device,Unique,Spell,DB
+Drums of Doom,Elite,Spell,DB
+Flaming Sword,Exceptional,Spell,DB
+Gilded Aegis,Unique,Spell,DB
+Iron Shackles,Exceptional,Spell,DB
+Kythera Mechanism,Unique,Spell,DB
+Land Deed,Elite,Spell,DB
+Lucky Charm (Foil),Exceptional,Spell,DB
+Maddening Bells,Elite,Spell,DB
+Magellan Globe,Elite,Spell,DB
+Magnetic Muzzle,Elite,Spell,DB
+Mask of Mayhem,Elite,Spell,DB
+Mix Aer,Elite,Spell,DB
+Mix Aqua,Elite,Spell,DB
+Mix Ignis,Elite,Spell,DB
+Mix Terra,Elite,Spell,DB
+Onyx Core,Unique,Spell,DB
+Orb of Ba’al Berith,Unique,Spell,DB
+Payload Trebuchet,Elite,Spell,DB
+Pendulum of Peril,Unique,Spell,DB
+Philosopher’s Stone,Unique,Spell,DB
+Pnakotic Manuscript,Unique,Spell,DB
+Poisonous Dagger,Exceptional,Spell,DB
+Purge Juggernaut,Elite,Spell,DB
+Rolling Boulder,Exceptional,Spell,DB
+Ruby Core,Unique,Spell,DB
+Scarecrow,Ordinary,Spell,DB
+Screaming Skull,Elite,Spell,DB
+Seven-League Boots,Unique,Spell,DB
+Siege Ballista,Exceptional,Spell,DB
+Spear of Destiny,Unique,Spell,DB
+Sunken Treasure,Exceptional,Spell,DB
+The Immortal Throne,Unique,Spell,DB
+Torshammar Trinket,Exceptional,Spell,DB
+Truesight Crossbow,Exceptional,Spell,DB
+Undertaker Engine,Elite,Spell,DB
+Wicker Manikin,Ordinary,Spell,DB
+Wings of Invention,Exceptional,Spell,DB
+Accursed Albatross,Exceptional,Spell,Water
+Adept Illusionist,Elite,Spell,Water
+Albespine Pikemen,Exceptional,Spell,Earth
+Älvalinne Dryads,Ordinary,Spell,Earth
+Amazon Warriors,Ordinary,Spell,Earth
+Ancient Dragon,Elite,Spell,Fire
+Anui Undine,Exceptional,Spell,Water
+Apprentice Wizard,Ordinary,Spell,Air
+Aramos Mercenaries,Ordinary,Spell,Fire
+Askelon Phoenix,Elite,Spell,Fire
+Atlas Wanderers,Elite,Spell,Earth
+Autumn Unicorn,Exceptional,Spell,Earth
+Awakened Mummies,Exceptional,Spell,Fire
+Azuridge Caravan,Ordinary,Spell,Fire
+Bane Widow,Exceptional,Spell,Fire
+Beast of Burden,Ordinary,Spell,Fire
+Belmotte Longbowmen,Ordinary,Spell,Earth
+Blood Ravens,Ordinary,Spell,Air
+Bone Rabble,Ordinary,Spell,Earth
+Bosk Troll,Ordinary,Spell,Earth
+Bridge Troll,Exceptional,Spell,Water
+Brobdingnag Bullfrog,Exceptional,Spell,Water
+Bull Demons of Adum,Elite,Spell,Fire
+Candlemas Monks,Elite,Spell,Air
+Captain Baldassare,Unique,Spell,Water
+Cauldron Crones,Ordinary,Spell,Fire
+Cave Trolls,Ordinary,Spell,Earth
+Cerberus in Chains,Unique,Spell,Fire
+Clamor of Harpies,Exceptional,Spell,Fire
+Cloud Spirit,Ordinary,Spell,Air
+Colicky Dragonettes,Exceptional,Spell,Fire
+Conqueror Worm,Elite,Spell,Earth
+Coral-Reef Kelpie,Ordinary,Spell,Water
+Court Jester,Elite,Spell,Water
+Courtesan Thaïs,Unique,Spell,Fire
+Crown Prince,Unique,Spell,Earth
+Dalcean Phalanx,Exceptional,Spell,Earth
+Daperyll Vampire,Exceptional,Spell,Air
+Dead of Night Demon,Ordinary,Spell,Air
+Death Dealer,Unique,Spell,Fire
+Deep-Sea Mermaids,Ordinary,Spell,Water
+Diluvian Kraken,Elite,Spell,Water
+Doomsday Prophet,Unique,Spell,Fire
+Dwarven Digging Team,Exceptional,Spell,Earth
+East-West Dragon,Elite,Spell,Air
+Escyllion Cyclops,Exceptional,Spell,Fire
+Far East Assassin,Elite,Spell,Fire
+Felbog Frog Men,Exceptional,Spell,Water
+Fenvale Muse,Ordinary,Spell,Water
+Fey Changeling,Exceptional,Spell,Water
+Frontier Settlers,Exceptional,Spell,Earth
+Ghost Ship,Elite,Spell,Water
+Giant Shark,Exceptional,Spell,Water
+Gneissgnath Gnomes,Exceptional,Spell,Earth
+Grandmaster Wizard,Elite,Spell,Air
+Great Old One,Unique,Spell,Water
+Grey Wolves,Ordinary,Spell,Earth
+Grim Reaper,Unique,Spell,Air
+Grösse Poltergeist,Elite,Spell,Fire
+Guile Sirens,Exceptional,Spell,Water
+Gyre Hippogriffs,Exceptional,Spell,Air
+Haast Eagle,Exceptional,Spell,Air
+Headless Haunt,Exceptional,Spell,Air
+Highland Clansmen,Ordinary,Spell,Air
+Highland Falconer,Elite,Spell,Air
+Highland Princess,Unique,Spell,Air
+Hillock Basilisk,Exceptional,Spell,Fire
+Hounds of Ondaros,Elite,Spell,Air
+House Arn Bannerman,Exceptional,Spell,Earth
+Infernal Legion,Elite,Spell,Fire
+Island Leviathan,Elite,Spell,Water
+Karkemish Chimera,Elite,Spell,Fire
+King of the Realm,Unique,Spell,Earth
+Kite Archer,Exceptional,Spell,Air
+Land Surveyor,Ordinary,Spell,Earth
+Lava Salamander,Exceptional,Spell,Fire
+Lord of the Void,Unique,Spell,Air
+Lord of Unland,Unique,Spell,Water
+Mage Slayer,Ordinary,Spell,Earth
+Master Tracker,Elite,Spell,Earth
+Maze Minotaur,Elite,Spell,Fire
+Megamoeba,Elite,Spell,Water
+Men of Leng,Ordinary,Spell,Air
+Midland Army,Unique,Spell,Earth
+Midnight Rogue,Ordinary,Spell,Air
+Miracle Workers,Ordinary,Spell,Earth
+Monastery Gargoyle,Exceptional,Spell,Earth
+Monster Hunter,Exceptional,Spell,Earth
+Moon Clan Werewolf,Exceptional,Spell,Air
+Mordric Druids,Elite,Spell,Earth
+Mother Nature,Unique,Spell,Water
+Mountain Giant,Elite,Spell,Earth
+Muck Lampreys,Ordinary,Spell,Water
+Nightmare,Elite,Spell,Air
+Nimbus Jinn,Elite,Spell,Air
+Ogre Goons,Ordinary,Spell,Fire
+Old Salt Anchorman,Ordinary,Spell,Water
+Ormund Harpooneers,Exceptional,Spell,Water
+Outback Strider,Exceptional,Spell,Fire
+Palliburrie Bats,Ordinary,Spell,Air
+Panorama Manticore,Elite,Spell,Fire
+Peregrine Apparition,Exceptional,Spell,Air
+Petrosian Cavalry,Ordinary,Spell,Fire
+Phantasmal Shade,Exceptional,Spell,Air
+Phantom Steed,Exceptional,Spell,Air
+Phase Assassin,Exceptional,Spell,Air
+Pirate Ship,Ordinary,Spell,Water
+Pit Vipers,Ordinary,Spell,Fire
+Plumed Pegasus,Ordinary,Spell,Air
+Polar Bears,Ordinary,Spell,Water
+Polar Explorers,Elite,Spell,Water
+Porcupine Pufferfish,Ordinary,Spell,Water
+Pudge Butcher,Exceptional,Spell,Earth
+Puppet Master,Elite,Spell,Air
+Quarrelsome Kobolds,Exceptional,Spell,Fire
+Queen of Midland,Unique,Spell,Earth
+Raal Dromedary,Ordinary,Spell,Fire
+Recurring Specter,Elite,Spell,Air
+Riddle Sphinx,Elite,Spell,Air
+Rimland Nomads,Ordinary,Spell,Fire
+Roaming Monster,Ordinary,Spell,Air
+Root Spider,Exceptional,Spell,Earth
+Royal Bodyguard,Elite,Spell,Earth
+Ruler of Thul,Unique,Spell,Water
+Sacred Scarabs,Ordinary,Spell,Fire
+Sand Worm,Ordinary,Spell,Fire
+Scavenging Fiend,Exceptional,Spell,Fire
+Scent Hounds,Ordinary,Spell,Earth
+Scourge Zombies,Ordinary,Spell,Earth
+Sea Raider,Exceptional,Spell,Water
+Sea Serpent,Ordinary,Spell,Water
+Seasoned Sellsword,Elite,Spell,Fire
+Sedge Crabs,Ordinary,Spell,Water
+Seirawan Hydra,Elite,Spell,Water
+Selfsame Simulacrum,Elite,Spell,Water
+Shield Maidens,Exceptional,Spell,Earth
+Silver Valkyries,Elite,Spell,Earth
+Sirian Templar,Exceptional,Spell,Earth
+Sirocco Scorpions,Ordinary,Spell,Fire
+Sisters of Silence,Elite,Spell,Earth
+Skirmishers of Mu,Exceptional,Spell,Air
+Sky Baron,Elite,Spell,Air
+Sling Pixies,Exceptional,Spell,Air
+Slumbering Giantess,Exceptional,Spell,Earth
+Sneak Thief,Elite,Spell,Water
+Snow Leopard,Ordinary,Spell,Air
+Spectral Stalker,Ordinary,Spell,Air
+Spire Lich,Exceptional,Spell,Air
+Squirming Mass,Elite,Spell,Earth
+Stone-gaze Gorgons,Elite,Spell,Earth
+Swamp Buffalo,Ordinary,Spell,Water
+Swan Maidens,Ordinary,Spell,Water
+Swiven Scout,Exceptional,Spell,Fire
+Tide Naiads,Exceptional,Spell,Water
+Tragedy Worrywart,Exceptional,Spell,Earth
+Tringh Constrictor,Exceptional,Spell,Water
+Tufted Turtles,Ordinary,Spell,Water
+Tvinnax Berserker,Exceptional,Spell,Fire
+Ultimate Horror,Unique,Spell,Air
+Unland Angler,Elite,Spell,Water
+Unland Eel,Exceptional,Spell,Water
+Vanguard Knights,Exceptional,Spell,Earth
+Vile Imp,Ordinary,Spell,Fire
+Vril Revenant,Elite,Spell,Air
+Wayfaring Pilgrim,Exceptional,Spell,Fire
+Wicked Witch,Elite,Spell,Earth
+Wild Boars,Ordinary,Spell,Earth
+Wills-o’-the-Wisp,Exceptional,Spell,Fire
+Wind Sylph,Exceptional,Spell,Air
+Witherwing Hero,Unique,Spell,Air
+Wraetannis Titan,Elite,Spell,Earth
+Yokai Kappas,Elite,Spell,Water
+Yourke Crossbowmen,Exceptional,Spell,Earth
+Zephyranne Airship,Elite,Spell,Air
+Assorted Animals,Elite,Spell,Earth
+Backstab,Exceptional,Spell,Fire
+Blaze,Exceptional,Spell,Fire
+Blink,Ordinary,Spell,Air
+Boil,Ordinary,Spell,Fire
+Border Militia,Ordinary,Spell,Earth
+Browse,Unique,Spell,Air
+Bury,Ordinary,Spell,Earth
+Call to War,Exceptional,Spell,Earth
+Cave-In,Exceptional,Spell,Earth
+Chain Lightning,Exceptional,Spell,Air
+Chaos Twister,Elite,Spell,Air
+Common Sense,Ordinary,Spell,Earth
+Cone of Flame,Exceptional,Spell,Fire
+Craterize,Elite,Spell,Earth
+Critical Strike,Ordinary,Spell,Fire
+Disenchant,Ordinary,Spell,Air
+Disintegrate,Elite,Spell,Fire
+Dispel,Ordinary,Spell,Earth
+Divine Healing,Exceptional,Spell,Earth
+Dodge Roll,Exceptional,Spell,Water
+Dream-Quest,Unique,Spell,Air
+Drown,Ordinary,Spell,Water
+Earthquake,Elite,Spell,Earth
+Exorcism,Ordinary,Spell,Earth
+Extinguish,Ordinary,Spell,Water
+Fade,Ordinary,Spell,Air
+Fire Harpoons!,Ordinary,Spell,Water
+Fireball,Exceptional,Spell,Fire
+Firebolts,Ordinary,Spell,Fire
+Flame Wave,Elite,Spell,Fire
+Flanking Maneuver,Exceptional,Spell,Air
+Font of Life,Exceptional,Spell,Water
+Frost Nova,Exceptional,Spell,Water
+Geyser,Exceptional,Spell,Water
+Gigantism,Unique,Spell,Earth
+Grapple Shot,Ordinary,Spell,Air
+Heat Ray,Ordinary,Spell,Fire
+Ice Lance,Ordinary,Spell,Water
+Immolation,Unique,Spell,Fire
+Incinerate,Ordinary,Spell,Fire
+Infiltrate,Elite,Spell,Fire
+Leap Attack,Exceptional,Spell,Fire
+Lightning Bolt,Ordinary,Spell,Air
+Mad Dash,Ordinary,Spell,Fire
+Major Explosion,Elite,Spell,Fire
+Marine Voyage,Exceptional,Spell,Water
+Meteor Shower,Elite,Spell,Fire
+Minecart Madness,Exceptional,Spell,Earth
+Minor Explosion,Ordinary,Spell,Fire
+Mortality,Ordinary,Spell,Air
+Occult Ritual,Unique,Spell,Air
+Overpower,Ordinary,Spell,Earth
+Pact with the Devil,Unique,Spell,Fire
+Plague of Frogs,Unique,Spell,Water
+Poison Nova,Exceptional,Spell,Fire
+Pollimorph,Elite,Spell,Water
+Psionic Blast,Exceptional,Spell,Air
+Rain of Arrows,Ordinary,Spell,Air
+Raise Dead,Exceptional,Spell,Air
+Recall,Exceptional,Spell,Air
+Replication,Elite,Spell,Water
+Riptide,Ordinary,Spell,Water
+Scent Hounds,Elite,Spell,Fire
+Shield Wall,Exceptional,Spell,Earth
+Shrink,Exceptional,Spell,Water
+Sleep,Ordinary,Spell,Water
+Spin Attack,Ordinary,Spell,Fire
+Star-seeds of Uhr,Unique,Spell,Earth
+Stormy Seas,Exceptional,Spell,Water
+Telekinesis,Exceptional,Spell,Air
+Teleport,Ordinary,Spell,Air
+Twist of Fate,Unique,Spell,Water
+Unlikely Alliance,Elite,Spell,Air
+Unravel,Ordinary,Spell,Earth
+Upwelling,Exceptional,Spell,Water
+Warp Spasm,Unique,Spell,Fire
+Waypoint Portal,Exceptional,Spell,Air
+Whirling Blades,Exceptional,Spell,Air
+Windblast,Exceptional,Spell,Air
+Wrath of the Sea,Elite,Spell,Water
+Aqueduct,Exceptional,Site,DB
+Arid Desert,Booster,Site,DB
+Astral Alcazar,Elite,Site,DB
+Autumn River,Booster,Site,DB
+Battlefield,Elite,Site,DB
+Bedrock,Exceptional,Site,DB
+Boneyard,Unique,Site,DB
+Bottomless Pit,Elite,Site,DB
+Cloud City,Unique,Site,DB
+Cornerstone,Exceptional,Site,DB
+Crossroads,Elite,Site,DB
+Dark Tower,Booster,Site,DB
+Dome of Osiros,Unique,Site,DB
+Donnybrook Inn,Unique,Site,DB
+Dwarven Forge,Elite,Site,DB
+Edge of the World,Elite,Site,DB
+Floodplain,Exceptional,Site,DB
+Free City,Exceptional,Site,DB
+Gnome Hollows,Exceptional,Site,DB
+Gothic Tower,Booster,Site,DB
+Great Wall,Unique,Site,DB
+Holy Ground,Exceptional,Site,DB
+Humble Village,Booster,Site,DB
+Iceberg,Exceptional,Site,DB
+Imperial Road,Elite,Site,DB
+Kingdom of Agartha,Unique,Site,DB
+Lighthouse,Exceptional,Site,DB
+Lone Tower,Booster,Site,DB
+Maelström,Unique,Site,DB
+Mirage,Elite,Site,DB
+Mirror Realm,Unique,Site,DB
+Mountain Pass,Exceptional,Site,DB
+Mudflow,Exceptional,Site,DB
+Oasis,Exceptional,Site,DB
+Observatory,Elite,Site,DB
+Pillar of Zeiros,Unique,Site,DB
+Planar Gate,Elite,Site,DB
+Primordial Spring,Elite,Site,DB
+Pristine Paradise,Unique,Site,DB
+Quagmire,Exceptional,Site,DB
+Red Desert,Booster,Site,DB
+Remote Desert,Booster,Site,DB
+Rift Valley,Elite,Site,DB
+River of Flame,Unique,Site,DB
+Roots of Yggdrasil,Unique,Site,DB
+Ruins,Exceptional,Site,DB
+Rustic Village,Booster,Site,DB
+Secret Tunnel,Exceptional,Site,DB
+Shifting Sands,Exceptional,Site,DB
+Simple Village,Booster,Site,DB
+Sinkhole,Elite,Site,DB
+Smokestacks of Gnaak,Unique,Site,DB
+Spring River,Booster,Site,DB
+Standing Stones,Elite,Site,DB
+Steppe,Exceptional,Site,DB
+Summer River,Booster,Site,DB
+Tadpole Pool,Unique,Site,DB
+The Colour Out of Space,Unique,Site,DB
+The Geistwood,Unique,Site,DB
+Undertow,Exceptional,Site,DB
+Updraft Ridge,Exceptional,Site,DB
+Vantage Hills,Exceptional,Site,DB
+Vaults of Zul,Unique,Site,DB
+Vesuvius,Unique,Site,DB
+Watchtower,Exceptional,Site,DB
+Windmill,Exceptional,Site,DB

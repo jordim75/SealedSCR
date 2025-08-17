@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <title>Obrir sobres de cartes</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+    select, button { padding: 10px; font-size: 16px; margin: 10px; }
+    .sobre { border: 1px solid #ccc; border-radius: 8px; margin: 10px; padding: 10px; display: inline-block; vertical-align: top; }
+    ul { list-style: none; padding: 0; }
+    li { padding: 3px; margin: 2px; border-bottom: 1px solid #eee; }
+  </style>
+</head>
+<body>
+  <h1>Generate Booster Packs</h1>
+
+  <label for="jugadors">Players:</label>
+  <select id="jugadors">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+</select>
+
+  <label for="sobres"># of Booster Packs:</label>
+  <select id="sobres">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+  </select>
+
+  
+  <button onclick="exportarXLSX()">XLSX DownLoad</button>
+
+  <div id="resultat"></div>
+
+  <script>
+    
+         function exportarXLSX() {
+    const j = document.getElementById("jugadors").value;
+    const s = document.getElementById("sobres").value;
+    window.location.href = `/export_xlsx/${j}/${s}`;
+  }
+  </script>
+</body>
+</html>

@@ -7,6 +7,7 @@ app = Flask(__name__)
 
 # Carregar les cartes des del CSV
 cartes_df = pd.read_csv("FontBeta.csv")
+cartes_df_AL = pd.read_csv("FontAL.csv")
 
 # Separar cartes segons tipus
 cartes_per_tipus = {
@@ -18,7 +19,7 @@ cartes_per_tipus = {
     "Unique": cartes_df[cartes_df["tipus"] == "Unique"].to_dict(orient="records"),
 }
 
-def generar_sobre():
+def generar_sobre_Beta():
     sobre = []
 
     
@@ -39,7 +40,32 @@ def generar_sobre():
         sobre.append(random.choice(cartes_per_tipus["BoosterAvatar"]))
     else:  # 24% Unique
         sobre.append(random.choice(cartes_per_tipus["Booster"]))
+    return sobre
     
+def generar_sobre_AL(cartes):
+    """
+    Genera un sobre de tipus 2:
+      - 11 Ordinary
+      - 3 Exceptional
+      - 1 Elite o Unique (81.25% Elite, 18.75% Unique)
+    """
+    sobre = []
+
+    # 11 Ordinary
+    ordinary = [c for c in cartes if c["tipus"] == "Ordinary"]
+    sobre.extend(random.sample(ordinary, 11))
+
+    # 3 Exceptional
+    exceptional = [c for c in cartes if c["tipus"] == "Exceptional"]
+    sobre.extend(random.sample(exceptional, 3))
+
+    # 1 Elite o Unique amb probabilitat
+    if random.random() < 0.8125:  # 81.25% Elite
+        elite = [c for c in cartes if c["tipus"] == "Elite"]
+        sobre.append(random.choice(elite))
+    else:  # 18.75% Unique
+        unique = [c for c in cartes if c["tipus"] == "Unique"]
+        sobre.append(random.choice(unique))
 
     return sobre
 
@@ -68,10 +94,11 @@ def export_xlsx(jocs, sobres):
         # Capsaleres
         ws.append(["Avatars", "Spells", "Sites"])
 
-        # Generar tots els sobres del jugador
         cartes_jugador = []
-        for _ in range(sobres):
-            cartes_jugador.extend(generar_sobre())
+        for _ in range(n1):
+            cartes_jugador.extend(generar_sobre_Beta())
+        for _ in range(n2):
+            cartes_jugador.extend(generar_sobre_AL())
 
         # Filtrar per categoria
         avatars = sorted([c["nom"] for c in cartes_jugador if c["cat"] == "Avatar"])

@@ -44,7 +44,7 @@ def generar_sobre_Beta():
         sobre.append(random.choice(cartes_Beta["Booster"]))
     return sobre
     
-def generar_sobre_AL(cartes):
+def generar_sobre_AL():
         # 3 Exceptional
     sobre.extend(random.sample(cartes_AL["Exceptional"], 3))
     # 1 Elite o Unique

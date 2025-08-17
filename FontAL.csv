@@ -33,9 +33,9 @@ Ring of Morrigan,Unique,Spell,DB
 Sword and Shield,Exceptional,Spell,DB
 The Round Table,Unique,Spell,DB
 Band of Thieves,Ordinary,Spell,Air
-Black Knight,Exceptional,Spell,"Fire, Water"
+Black Knight,Exceptional,Spell,MC
 Blacksmith Family,Ordinary,Spell,Fire
-Blue Knight,Exceptional,Spell,"Air, Water"
+Blue Knight,Exceptional,Spell,MC
 Bluecap Knockers,Exceptional,Spell,Earth
 Blunderbore,Unique,Spell,Fire
 Boudicca,Unique,Spell,Fire
@@ -45,7 +45,7 @@ Castle Haunt,Exceptional,Spell,Air
 Castle Servants,Ordinary,Spell,Air
 Common Cottagers,Ordinary,Spell,Earth
 Coy Nixie,Exceptional,Spell,Water
-Dame Britomart,Unique,Spell,"Air, Earth, Water"
+Dame Britomart,Unique,Spell,MC
 Dirium Fomorians,Exceptional,Spell,Earth
 Field Laborers,Ordinary,Spell,Earth
 Fine Courser,Exceptional,Spell,Air
@@ -61,7 +61,7 @@ Hunting Party,Exceptional,Spell,Earth
 Hyter Sprites,Ordinary,Spell,Air
 Keening Banshee,Ordinary,Spell,Air
 Kettletop Leprechaun,Ordinary,Spell,Earth
-King Arthur,Unique,Spell,"Air, Earth, Fire, Water"
+King Arthur,Unique,Spell,MC
 Kingswood Poachers,Exceptional,Spell,Water
 Lady Iseult,Unique,Spell,Earth
 Lake Afanc,Ordinary,Spell,Water
@@ -77,8 +77,8 @@ Ominous Owl,Ordinary,Spell,Air
 Overbearing Bailiff,Elite,Spell,Earth
 Pigs of the Sounder,Exceptional,Spell,Earth
 Pookas,Exceptional,Spell,Fire
-Purple Knight,Exceptional,Spell,"Air, Fire"
-Queen Guinevere,Unique,Spell,"Air, Earth, Fire, Water"
+Purple Knight,Exceptional,Spell,MC
+Queen Guinevere,Unique,Spell,MC
 Questing Beast,Unique,Spell,Water
 Rebecks,Unique,Spell,Fire
 Reckless Squire,Ordinary,Spell,Fire
@@ -94,27 +94,27 @@ Shameless Squire,Ordinary,Spell,Water
 Shellycoat,Ordinary,Spell,Water
 Sherwood Huntress,Ordinary,Spell,Air
 Siege Giant,Exceptional,Spell,Fire
-Sir Agravaine,Unique,Spell,"Fire, Water"
-Sir Balin,Unique,Spell,"Air, Fire"
-Sir Bedivere,Unique,Spell,"Earth, Water"
-Sir Bors the Younger,Unique,Spell,"Air, Earth"
-Sir Gaheris,Unique,Spell,"Earth, Water"
-Sir Galahad,Unique,Spell,"Air, Earth"
-Sir Gareth,Unique,Spell,"Air, Water"
-Sir Gawain,Unique,Spell,"Earth, Fire, Water"
-Sir Ironside,Unique,Spell,"Earth, Water"
-Sir Kay,Unique,Spell,"Air, Earth, Fire"
-Sir Lamorak,Unique,Spell,"Air, Fire"
-Sir Lancelot,Unique,Spell,"Earth, Fire"
-Sir Mordred,Unique,Spell,"Earth, Water"
-Sir Morien,Unique,Spell,"Earth, Fire"
-Sir Pelleas,Unique,Spell,"Air, Water"
-Sir Pellinore,Unique,Spell,"Air, Fire"
-Sir Perceval,Unique,Spell,"Air, Earth"
-Sir Priamus,Unique,Spell,"Earth, Fire"
-Sir Tom Thumb,Unique,Spell,"Air, Water"
-Sir Tristan,Unique,Spell,"Air, Fire,Water"
-Sir Yvain,Unique,Spell,"Earth, Water"
+Sir Agravaine,Unique,Spell,MC
+Sir Balin,Unique,Spell,MC
+Sir Bedivere,Unique,Spell,MC
+Sir Bors the Younger,Unique,Spell,MC
+Sir Gaheris,Unique,Spell,MC
+Sir Galahad,Unique,Spell,MC
+Sir Gareth,Unique,Spell,MC
+Sir Gawain,Unique,Spell,MC
+Sir Ironside,Unique,Spell,MC
+Sir Kay,Unique,Spell,MC
+Sir Lamorak,Unique,Spell,MC
+Sir Lancelot,Unique,Spell,MC
+Sir Mordred,Unique,Spell,MC
+Sir Morien,Unique,Spell,MC
+Sir Pelleas,Unique,Spell,MC
+Sir Pellinore,Unique,Spell,MC
+Sir Perceval,Unique,Spell,MC
+Sir Priamus,Unique,Spell,MC
+Sir Tom Thumb,Unique,Spell,MC
+Sir Tristan,Unique,Spell,MC
+Sir Yvain,Unique,Spell,MC
 Sisters of Avalon,Exceptional,Spell,Air
 Sly Fox,Ordinary,Spell,Water
 Spearmarshal,Elite,Spell,Earth
@@ -133,16 +133,16 @@ Thundering Giant,Elite,Spell,Air
 Tooth Faeries,Exceptional,Spell,Air
 Unseelie Court,Elite,Spell,Air
 Vengeful Heir,Elite,Spell,Fire
-Verdant Knight,Exceptional,Spell,"Earth, Water"
+Verdant Knight,Exceptional,Spell,MC
 Vikings,Ordinary,Spell,Fire
 Vivien the Enchantress,Unique,Spell,Earth
 War Horse,Exceptional,Spell,Fire
 Weightless Squire,Ordinary,Spell,Air
 White Hart,Unique,Spell,Earth
-White Knight,Exceptional,Spell,"Air, Earth"
+White Knight,Exceptional,Spell,MC
 Wolpertinger,Elite,Spell,Earth
 Wyvern,Exceptional,Spell,Earth
-Yellow Knight,Exceptional,Spell,"Earth, Fire"
+Yellow Knight,Exceptional,Spell,MC
 Arc Lightning,Ordinary,Spell,Air
 Arcane Barrage,Elite,Spell,Air
 Attack by Night,Exceptional,Spell,Air

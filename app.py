@@ -78,7 +78,7 @@ def sobres(n):
     return jsonify([generar_sobre() for _ in range(n)])
 
 @app.route("/export_xlsx/<int:jocs>/<int:n1>/<int:n2>")
-def export_xlsx(jocs, sobres):
+def export_xlsx(jocs, n1, n2):
     wb = Workbook()
     # Prioritat dels elements
     elem_order = {"DB": 0, "Air": 1, "Earth": 2, "Fire": 3, "Water": 4, "MC": 5}

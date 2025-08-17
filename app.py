@@ -76,9 +76,9 @@ def export_xlsx(jocs, n1, n2):
         # Crear full per cada jugador
         if jugador == 1:
             ws = wb.active
-            ws.title = f"Jugador {jugador}"
+            ws.title = f"Player {jugador}"
         else:
-            ws = wb.create_sheet(title=f"Jugador {jugador}")
+            ws = wb.create_sheet(title=f"Player {jugador}")
 
         # Capsaleres
         ws.append(["Avatars", "Spells", "Sites"])

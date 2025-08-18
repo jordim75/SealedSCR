@@ -91,20 +91,18 @@
     Follow the steps below 👇
   </p>
 
-  <!-- PRIMER CONTENIDOR: Beta packs -->
+  <!-- STEP 1: Beta packs -->
   <div class="card">
     <h2>Step 1: Choose Beta Packs</h2>
     <div class="row">
       <label for="nType1">Beta packs (per player)</label>
       <input id="nType1" type="number" min="0" max="6" value="3" />
     </div>
-    <!-- Missatge d'estat -->
-    <div id="status" class="status" aria-live="polite"></div>
   </div>
 
-  <!-- SEGON CONTENIDOR: Status + jugadors + botó -->
+  <!-- STEP 2: Players -->
   <div class="card">
-    <h2>Step 2: Players & Download</h2>
+    <h2>Step 2: Players</h2>
 
     
     
@@ -113,18 +111,25 @@
       (Each player will generate an xlsx sheet).
     </p>
 
+    <div class="row">
+      <label for="jugadors">Players</label>
+      <select id="jugadors">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4" selected>4</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- STEP 3: Download -->
+  <div class="card">
+    <h2>Step 3: Download</h2>
+    <!-- Missatge d'estat -->
+    <div id="status" class="status" aria-live="polite"></div>
     <div class="actions">
-      <div>
-        <label for="jugadors">Players</label>
-        <select id="jugadors">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4" selected>4</option>
-          <option value="50">50</option>
-          <option value="100">100</option>
-        </select>
-      </div>
       <button id="exportXlsxBtn" disabled>⬇️ Download XLSX</button>
     </div>
   </div>

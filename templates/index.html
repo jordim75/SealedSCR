@@ -5,40 +5,129 @@
   <title>Generador de sobres</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    body { font-family: system-ui, Arial, sans-serif; padding: 24px; max-width: 700px; margin: auto; }
-    h1 { margin-bottom: 8px; }
-    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 8px 0; }
-    label { font-weight: 600; }
-    select, input { width: 100%; padding: 10px; font-size: 16px; }
-    button { padding: 10px 16px; font-size: 16px; cursor: pointer; margin-top: 12px; }
-    .status { margin-top: 8px; font-weight: 600; }
+    body {
+      font-family: system-ui, Arial, sans-serif;
+      padding: 24px;
+      max-width: 700px;
+      margin: auto;
+      text-align: center;
+      background: #f5f6fa;
+    }
+    h1 {
+      margin-bottom: 12px;
+    }
+    p {
+      margin-bottom: 16px;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin: 20px 0;
+      text-align: center;
+    }
+    .card h2 {
+      margin-bottom: 16px;
+      font-size: 20px;
+      color: #333;
+    }
+    .row {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      margin: 12px 0;
+    }
+    label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 4px;
+    }
+    select, input {
+      width: 200px;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .status {
+      margin: 20px 0;
+      font-weight: 600;
+      font-size: 18px;
+    }
+    .actions {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    button {
+      padding: 12px 20px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+      background: #0078d7;
+      color: white;
+      transition: background 0.2s ease;
+    }
+    button:hover:enabled {
+      background: #005ea6;
+    }
+    button:disabled {
+      background: #aaa;
+      cursor: not-allowed;
+    }
   </style>
 </head>
 <body>
-  <h1> SCR  -	Massive booster pack Generator - Sealed </h1>
-  <p>Each player has exactly <strong>6 booster packs</strong>. Choose how many from Beta.</p>
+  <h1>SCR - Massive Booster Pack Generator - Sealed</h1>
+  <p>
+    Each player has exactly <strong>6 booster packs</strong>.  
+    Follow the steps below 👇
+  </p>
 
-  <div class="row">
-    <div>
-      <label for="jugadors">Players</label>
-      <select id="jugadors">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4" selected>4</option>
-        <option value="50">50</option>
-        <option value="100">100</option>
-      </select>
-    </div>
-    <div>
+  <!-- PRIMER CONTENIDOR: Beta packs -->
+  <div class="card">
+    <h2>Step 1: Choose Beta Packs</h2>
+    <div class="row">
       <label for="nType1">Beta packs (per player)</label>
       <input id="nType1" type="number" min="0" max="6" value="3" />
     </div>
+    <!-- Missatge d'estat -->
+    <div id="status" class="status" aria-live="polite"></div>
   </div>
 
-  <div id="status" class="status"></div>
+  <!-- SEGON CONTENIDOR: Status + jugadors + botó -->
+  <div class="card">
+    <h2>Step 2: Players & Download</h2>
 
-  <button id="exportXlsxBtn">Download XLSX</button>
+    
+    
+    <p>
+      Now select the <strong>number of players</strong>.  
+      (Each player will generate an xlsx sheet).
+    </p>
+
+    <div class="actions">
+      <div>
+        <label for="jugadors">Players</label>
+        <select id="jugadors">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4" selected>4</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+        </select>
+      </div>
+      <button id="exportXlsxBtn" disabled>⬇️ Download XLSX</button>
+    </div>
+  </div>
 
   <script>
     const jugadorsEl = document.getElementById('jugadors');
@@ -49,24 +138,29 @@
     function updateStatus() {
       const n1 = parseInt(n1El.value || '0', 10);
       const n2 = 6 - n1;
-      if (n1 < 0 || n1 > 6) {
+
+      if (isNaN(n1) || n1 < 0 || n1 > 6) {
         statusEl.textContent = "❌ The number of Beta Booster packs has to be between [0-6].";
         statusEl.style.color = "red";
         exportBtn.disabled = true;
       } else {
-        statusEl.textContent = `✅ Each player have ${n1} Beta Booster Packs and ${n2} AL booster Packs (total 6).`;
+        statusEl.textContent = `✅ Each player has ${n1} Beta Booster Packs and ${n2} AL Booster Packs (total 6).`;
         statusEl.style.color = "green";
         exportBtn.disabled = false;
       }
     }
 
     n1El.addEventListener('input', updateStatus);
-    updateStatus();
+    updateStatus(); // inicialitzar
 
     exportBtn.addEventListener('click', () => {
+      statusEl.textContent = "📥 Preparing your file...";
+      statusEl.style.color = "blue";
+
       const j = parseInt(jugadorsEl.value, 10);
       const n1 = parseInt(n1El.value, 10);
       const n2 = 6 - n1;
+
       window.location.href = `/export_xlsx/${j}/${n1}/${n2}`;
     });
   </script>

@@ -7,6 +7,7 @@ app = Flask(__name__)
 
 # Carregar les cartes des del CSV
 cartes_dfBeta = pd.read_csv("FontBeta.csv")
+cartes_dfDL = pd.read_csv("FontDL.csv")
 cartes_dfAL = pd.read_csv("FontAL.csv")
 
 # Separar cartes segons tipus
@@ -24,6 +25,11 @@ cartes_AL = {
     "Elite": cartes_dfAL[cartes_dfAL["tipus"] == "Elite"].to_dict(orient="records"),
     "Unique": cartes_dfAL[cartes_dfAL["tipus"] == "Unique"].to_dict(orient="records"),
 }
+
+
+
+cartes_DL = cartes_dfDL.to_dict(orient="records")
+
 
 def generar_sobre_Beta():
     sobre = []
@@ -57,6 +63,10 @@ def generar_sobre_AL():
     sobre.extend(random.sample(cartes_AL["Ordinary"], 11))
     
     return sobre
+    
+def generar_sobre_DL():
+    """Sempre retorna les 13 cartes fixes del pack DragonLord"""
+    return cartes_DL.copy()
 
 @app.route("/")
 def index():
@@ -66,21 +76,24 @@ def index():
 def sobres(n):
     return jsonify([generar_sobre() for _ in range(n)])
 
-@app.route("/export_xlsx/<int:jocs>/<int:n1>/<int:n2>")
-def export_xlsx(jocs, n1, n2):
+@app.route("/export_xlsx/<int:jocs>/<int:n1>/<int:n2>/<int:dl>")
+def export_xlsx(jocs, n1, n2, dl):
     wb = Workbook()
-    # Prioritat dels elements
     elem_order = {"DB": 0, "Air": 1, "Earth": 2, "Fire": 3, "Water": 4, "MC": 5}
 
+    # Validació: total sempre 6 (o 5+1 si hi ha DL)
+    if dl == 1 and (n1 + n2 != 5):
+        return Response("❌ Error: Si actives DragonLord, els Beta+AL han de sumar exactament 5.", status=400)
+    if dl == 0 and (n1 + n2 != 6):
+        return Response("❌ Error: Si NO actives DragonLord, els Beta+AL han de sumar exactament 6.", status=400)
+
     for jugador in range(1, jocs+1):
-        # Crear full per cada jugador
         if jugador == 1:
             ws = wb.active
             ws.title = f"P{jugador}"
         else:
             ws = wb.create_sheet(title=f"P{jugador}")
 
-        # Capsaleres
         ws.append(["Avatars", "Spells", "Sites"])
 
         cartes_jugador = []
@@ -88,24 +101,17 @@ def export_xlsx(jocs, n1, n2):
             cartes_jugador.extend(generar_sobre_Beta())
         for _ in range(n2):
             cartes_jugador.extend(generar_sobre_AL())
+        if dl == 1:
+            cartes_jugador.extend(generar_sobre_DL())
 
-        # Filtrar per categoria
         avatars = sorted([c["nom"] for c in cartes_jugador if c["cat"] == "Avatar"])
         spells  = [c for c in cartes_jugador if c["cat"] == "Spell"]
         sites   = sorted([c["nom"] for c in cartes_jugador if c["cat"] == "Site"])
 
-        # Ordenar Spells per element i nom
-        spells_sorted = sorted(
-            spells,
-            key=lambda c: (elem_order.get(c["elem"], 99), c["nom"])
-        )
-        # Només noms amb element entre claudàtors
+        spells_sorted = sorted(spells, key=lambda c: (elem_order.get(c["elem"], 99), c["nom"]))
         spells_names = [f"{c['nom']}" for c in spells_sorted]
 
-        # Trobar la longitud màxima de les columnes
         max_len = max(len(avatars), len(spells_names), len(sites))
-
-        # Afegir les files
         for i in range(max_len):
             fila = [
                 avatars[i] if i < len(avatars) else "",
@@ -114,17 +120,13 @@ def export_xlsx(jocs, n1, n2):
             ]
             ws.append(fila)
 
-    # Guardar a memòria i retornar com a fitxer
     output = io.BytesIO()
     wb.save(output)
     output.seek(0)
+    return send_file(output, as_attachment=True,
+                     download_name="lots_jugadors.xlsx",
+                     mimetype="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
 
-    return send_file(
-        output,
-        as_attachment=True,
-        download_name="lots_jugadors.xlsx",
-        mimetype="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-    )
 
 if __name__ == "__main__":
     app.run(debug=True)

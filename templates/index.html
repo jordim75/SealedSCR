@@ -44,7 +44,7 @@
       display: block;
       margin-bottom: 4px;
     }
-    select, input {
+    select, input[type="number"] {
       width: 200px;
       padding: 10px;
       font-size: 16px;
@@ -100,17 +100,23 @@
     </div>
   </div>
 
+  <!-- STEP 1b: DragonLord -->
+  <div class="card">
+    <h2>Optional: Add DragonLord Pack</h2>
+    <div class="row">
+      <label>
+        <input id="dlCheck" type="checkbox" /> Add DragonLord Pack
+      </label>
+    </div>
+  </div>
+
   <!-- STEP 2: Players -->
   <div class="card">
     <h2>Step 2: Players</h2>
-
-    
-    
     <p>
       Now select the <strong>number of players</strong>.  
       (Each player will generate an xlsx sheet).
     </p>
-
     <div class="row">
       <label for="jugadors">Players</label>
       <select id="jugadors">
@@ -127,7 +133,6 @@
   <!-- STEP 3: Download -->
   <div class="card">
     <h2>Step 3: Download</h2>
-    <!-- Missatge d'estat -->
     <div id="status" class="status" aria-live="polite"></div>
     <div class="actions">
       <button id="exportXlsxBtn" disabled>⬇️ Download XLSX</button>
@@ -137,26 +142,29 @@
   <script>
     const jugadorsEl = document.getElementById('jugadors');
     const n1El = document.getElementById('nType1');
+    const dlEl = document.getElementById('dlCheck');
     const statusEl = document.getElementById('status');
     const exportBtn = document.getElementById('exportXlsxBtn');
 
     function updateStatus() {
       const n1 = parseInt(n1El.value || '0', 10);
-      const n2 = 6 - n1;
+      const dl = dlEl.checked ? 1 : 0;
+      const n2 = (dl ? 5 : 6) - n1;
 
-      if (isNaN(n1) || n1 < 0 || n1 > 6) {
-        statusEl.textContent = "❌ The number of Beta Booster packs has to be between [0-6].";
+      if (isNaN(n1) || n1 < 0 || n1 > (dl ? 5 : 6)) {
+        statusEl.textContent = `❌ Number of Beta packs must be between [0-${dl ? 5 : 6}].`;
         statusEl.style.color = "red";
         exportBtn.disabled = true;
       } else {
-        statusEl.textContent = `✅ Each player has ${n1} Beta Booster Packs and ${n2} AL Booster Packs (total 6).`;
+        statusEl.textContent = `✅ Each player has ${n1} Beta + ${n2} AL packs${dl ? " + 1 DragonLord Pack" : ""}.`;
         statusEl.style.color = "green";
         exportBtn.disabled = false;
       }
     }
 
     n1El.addEventListener('input', updateStatus);
-    updateStatus(); // inicialitzar
+    dlEl.addEventListener('change', updateStatus);
+    updateStatus();
 
     exportBtn.addEventListener('click', () => {
       statusEl.textContent = "📥 Preparing your file...";
@@ -164,9 +172,10 @@
 
       const j = parseInt(jugadorsEl.value, 10);
       const n1 = parseInt(n1El.value, 10);
-      const n2 = 6 - n1;
+      const dl = dlEl.checked ? 1 : 0;
+      const n2 = (dl ? 5 : 6) - n1;
 
-      window.location.href = `/export_xlsx/${j}/${n1}/${n2}`;
+      window.location.href = `/export_xlsx/${j}/${n1}/${n2}/${dl}`;
     });
   </script>
 </body>

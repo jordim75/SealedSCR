@@ -81,10 +81,10 @@ def export_xlsx(jocs, n1, n2, dl):
     wb = Workbook()
     elem_order = {"DB": 0, "Air": 1, "Earth": 2, "Fire": 3, "Water": 4, "MC": 5}
 
-    # Validació: total sempre 6 (o 5+1 si hi ha DL)
-    if dl == 1 and (n1 + n2 != 5):
+    # Validació: total sempre 9 (o 8+1 si hi ha DL)
+    if dl == 1 and (n1 + n2 != 8):
         return Response("❌ Error: Si actives DragonLord, els Beta+AL han de sumar exactament 5.", status=400)
-    if dl == 0 and (n1 + n2 != 6):
+    if dl == 0 and (n1 + n2 != 9):
         return Response("❌ Error: Si NO actives DragonLord, els Beta+AL han de sumar exactament 6.", status=400)
 
     for jugador in range(1, jocs+1):

@@ -2,7 +2,7 @@
 <html lang="ca">
 <head>
   <meta charset="UTF-8" />
-  <title>SATC-Sealed</title>
+  <title>Generador de sobres</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     body {
@@ -85,9 +85,9 @@
   </style>
 </head>
 <body>
-  <h1>SATC - Massive Booster Pack Generator - Sealed</h1>
+  <h1>SCR - Massive Booster Pack Generator - Sealed</h1>
   <p>
-    Each player has exactly <strong>6 booster packs</strong>.  
+    Each player has exactly <strong>9 booster packs</strong>.  
     Follow the steps below 👇
   </p>
 
@@ -96,7 +96,7 @@
     <h2>Step 1: Choose Beta Packs</h2>
     <div class="row">
       <label for="nType1">Beta packs (per player)</label>
-      <input id="nType1" type="number" min="0" max="6" value="3" />
+      <input id="nType1" type="number" min="0" max="9" value="3" />
     </div>
   </div>
 
@@ -123,9 +123,9 @@
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
-        <option value="4" >4</option>
+        <option value="4" selected>4</option>
         <option value="50">50</option>
-        <option value="100"selected > 100</option>
+        <option value="100">100</option>
       </select>
     </div>
   </div>
@@ -149,10 +149,10 @@
     function updateStatus() {
       const n1 = parseInt(n1El.value || '0', 10);
       const dl = dlEl.checked ? 1 : 0;
-      const n2 = (dl ? 5 : 6) - n1;
+      const n2 = (dl ? 8 : 9) - n1;
 
-      if (isNaN(n1) || n1 < 0 || n1 > (dl ? 5 : 6)) {
-        statusEl.textContent = `❌ Number of Beta packs must be between [0-${dl ? 5 : 6}].`;
+      if (isNaN(n1) || n1 < 0 || n1 > (dl ? 8 : 9)) {
+        statusEl.textContent = `❌ Number of Beta packs must be between [0-${dl ? 8 : 9}].`;
         statusEl.style.color = "red";
         exportBtn.disabled = true;
       } else {
@@ -173,7 +173,7 @@
       const j = parseInt(jugadorsEl.value, 10);
       const n1 = parseInt(n1El.value, 10);
       const dl = dlEl.checked ? 1 : 0;
-      const n2 = (dl ? 5 : 6) - n1;
+      const n2 = (dl ? 8 : 9) - n1;
 
       window.location.href = `/export_xlsx/${j}/${n1}/${n2}/${dl}`;
     });

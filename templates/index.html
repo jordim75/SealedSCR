@@ -87,7 +87,7 @@
 <body>
   <h1>SCR - Massive Booster Pack Generator - Sealed</h1>
   <p>
-    Each player has exactly <strong>9 booster packs</strong>.  
+    Each player has exactly <strong>36 booster packs</strong>.  
     Follow the steps below 👇
   </p>
 
@@ -96,7 +96,7 @@
     <h2>Step 1: Choose Beta Packs</h2>
     <div class="row">
       <label for="nType1">Beta packs (per player)</label>
-      <input id="nType1" type="number" min="0" max="9" value="3" />
+      <input id="nType1" type="number" min="0" max="36" value="18" />
     </div>
   </div>
 
@@ -149,10 +149,10 @@
     function updateStatus() {
       const n1 = parseInt(n1El.value || '0', 10);
       const dl = dlEl.checked ? 1 : 0;
-      const n2 = (dl ? 8 : 9) - n1;
+      const n2 = (dl ? 35 : 36) - n1;
 
-      if (isNaN(n1) || n1 < 0 || n1 > (dl ? 8 : 9)) {
-        statusEl.textContent = `❌ Number of Beta packs must be between [0-${dl ? 8 : 9}].`;
+      if (isNaN(n1) || n1 < 0 || n1 > (dl ? 35 : 36)) {
+        statusEl.textContent = `❌ Number of Beta packs must be between [0-${dl ? 35 : 36}].`;
         statusEl.style.color = "red";
         exportBtn.disabled = true;
       } else {

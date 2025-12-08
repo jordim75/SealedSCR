@@ -32,9 +32,9 @@ cartes_Gothic = { "Ordinary": cartes_dfGothic[cartes_dfGothic["tipus"] == "Ordin
              "Unique": cartes_dfGothic[cartes_dfGothic["tipus"] == "Unique"].to_dict(orient="records"),
             }
 
-cartes_Beta = separar_cartes(cartes_dfBeta)
-cartes_AL = separar_cartes(cartes_dfAL)
-cartes_Gothic = separar_cartes(cartes_dfGothic)
+cartes_Beta = cartes_beta(cartes_dfBeta)
+cartes_AL = cartes_AL(cartes_dfAL)
+cartes_Gothic = cartes_Gothic(cartes_dfGothic)
 cartes_DL = cartes_dfDL.to_dict(orient="records")
 
 # --- GENERADORS DE SOBRES ---

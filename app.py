@@ -26,6 +26,15 @@ cartes_AL = {
     "Unique": cartes_dfAL[cartes_dfAL["tipus"] == "Unique"].to_dict(orient="records"),
 }
 
+cartes_dfGothic = pd.read_csv("FontGothic.csv")
+
+cartes_Gothic = {
+    "Ordinary": cartes_dfGothic[cartes_dfGothic["tipus"] == "Ordinary"].to_dict(orient="records"),
+    "Exceptional": cartes_dfGothic[cartes_dfGothic["tipus"] == "Exceptional"].to_dict(orient="records"),
+    "Elite": cartes_dfGothic[cartes_dfGothic["tipus"] == "Elite"].to_dict(orient="records"),
+    "Unique": cartes_dfGothic[cartes_dfGothic["tipus"] == "Unique"].to_dict(orient="records"),
+}
+
 
 
 cartes_DL = cartes_dfDL.to_dict(orient="records")
@@ -64,6 +73,20 @@ def generar_sobre_AL():
     
     return sobre
     
+def generar_sobre_Gothic():
+    sobre = []
+    # 3 Exceptional
+    sobre.extend(random.sample(cartes_Gothic["Exceptional"], 3))
+    # 1 Elite o Unique
+    if random.random() < 0.8:
+        sobre.append(random.choice(cartes_Gothic["Elite"]))
+    else:
+        sobre.append(random.choice(cartes_Gothic["Unique"]))
+    # 11 Ordinary
+    sobre.extend(random.sample(cartes_Gothic["Ordinary"], 11))
+    
+    return sobre
+
 def generar_sobre_DL():
     """Sempre retorna les 13 cartes fixes del pack DragonLord"""
     return cartes_DL.copy()

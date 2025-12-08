@@ -12,13 +12,25 @@ cartes_dfAL = pd.read_csv("FontAL.csv")
 cartes_dfGothic = pd.read_csv("FontGothic.csv")
 
 # --- SEPARA PER TIPUS DE CARTA ---
-def separar_cartes(df):
-    return {
-        "Ordinary": df[df["tipus"] == "Ordinary"].to_dict(orient="records"),
-        "Exceptional": df[df["tipus"] == "Exceptional"].to_dict(orient="records"),
-        "Elite": df[df["tipus"] == "Elite"].to_dict(orient="records"),
-        "Unique": df[df["tipus"] == "Unique"].to_dict(orient="records"),
-    }
+cartes_Beta = { "Ordinary": cartes_dfBeta[cartes_dfBeta["tipus"] == 
+               "Ordinary"].to_dict(orient="records"), 
+               "Booster": cartes_dfBeta[cartes_dfBeta["tipus"] == "Booster"].to_dict(orient="records"), 
+               "BoosterAvatar": cartes_dfBeta[cartes_dfBeta["tipus"] == "BoosterAvatar"].to_dict(orient="records"), 
+               "Exceptional": cartes_dfBeta[cartes_dfBeta["tipus"] == "Exceptional"].to_dict(orient="records"),
+               "Elite": cartes_dfBeta[cartes_dfBeta["tipus"] == "Elite"].to_dict(orient="records"),
+               "Unique": cartes_dfBeta[cartes_dfBeta["tipus"] == "Unique"].to_dict(orient="records"), 
+      }
+cartes_AL = { "Ordinary": cartes_dfAL[cartes_dfAL["tipus"] == "Ordinary"].to_dict(orient="records"), 
+             "Exceptional": cartes_dfAL[cartes_dfAL["tipus"] == "Exceptional"].to_dict(orient="records"),
+             "Elite": cartes_dfAL[cartes_dfAL["tipus"] == "Elite"].to_dict(orient="records"), 
+             "Unique": cartes_dfAL[cartes_dfAL["tipus"] == "Unique"].to_dict(orient="records"),
+            }
+
+cartes_Gothic = { "Ordinary": cartes_dfGothic[cartes_dfAL["tipus"] == "Ordinary"].to_dict(orient="records"), 
+             "Exceptional": cartes_dfGothic[cartes_dfAL["tipus"] == "Exceptional"].to_dict(orient="records"),
+             "Elite": cartes_dfGothic[cartes_dfAL["tipus"] == "Elite"].to_dict(orient="records"), 
+             "Unique": cartes_dfGothic[cartes_dfAL["tipus"] == "Unique"].to_dict(orient="records"),
+            }
 
 cartes_Beta = separar_cartes(cartes_dfBeta)
 cartes_AL = separar_cartes(cartes_dfAL)

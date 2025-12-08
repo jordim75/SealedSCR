@@ -26,10 +26,10 @@ cartes_AL = { "Ordinary": cartes_dfAL[cartes_dfAL["tipus"] == "Ordinary"].to_dic
              "Unique": cartes_dfAL[cartes_dfAL["tipus"] == "Unique"].to_dict(orient="records"),
             }
 
-cartes_Gothic = { "Ordinary": cartes_dfGothic[cartes_dfAL["tipus"] == "Ordinary"].to_dict(orient="records"), 
-             "Exceptional": cartes_dfGothic[cartes_dfAL["tipus"] == "Exceptional"].to_dict(orient="records"),
-             "Elite": cartes_dfGothic[cartes_dfAL["tipus"] == "Elite"].to_dict(orient="records"), 
-             "Unique": cartes_dfGothic[cartes_dfAL["tipus"] == "Unique"].to_dict(orient="records"),
+cartes_Gothic = { "Ordinary": cartes_dfGothic[cartes_dfGothic["tipus"] == "Ordinary"].to_dict(orient="records"), 
+             "Exceptional": cartes_dfGothic[cartes_dfGothic["tipus"] == "Exceptional"].to_dict(orient="records"),
+             "Elite": cartes_dfGothic[cartes_dfGothic["tipus"] == "Elite"].to_dict(orient="records"), 
+             "Unique": cartes_dfGothic[cartes_dfGothic["tipus"] == "Unique"].to_dict(orient="records"),
             }
 
 cartes_Beta = separar_cartes(cartes_dfBeta)

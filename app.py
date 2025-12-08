@@ -5,131 +5,108 @@ from openpyxl import Workbook
 
 app = Flask(__name__)
 
-# Carregar les cartes des del CSV
+# --- CARREGA FITXERS CSV ---
 cartes_dfBeta = pd.read_csv("FontBeta.csv")
 cartes_dfDL = pd.read_csv("FontDL.csv")
 cartes_dfAL = pd.read_csv("FontAL.csv")
-
-# Separar cartes segons tipus
-cartes_Beta = {
-    "Ordinary": cartes_dfBeta[cartes_dfBeta["tipus"] == "Ordinary"].to_dict(orient="records"),
-    "Booster": cartes_dfBeta[cartes_dfBeta["tipus"] == "Booster"].to_dict(orient="records"),
-    "BoosterAvatar": cartes_dfBeta[cartes_dfBeta["tipus"] == "BoosterAvatar"].to_dict(orient="records"),
-    "Exceptional": cartes_dfBeta[cartes_dfBeta["tipus"] == "Exceptional"].to_dict(orient="records"),
-    "Elite": cartes_dfBeta[cartes_dfBeta["tipus"] == "Elite"].to_dict(orient="records"),
-    "Unique": cartes_dfBeta[cartes_dfBeta["tipus"] == "Unique"].to_dict(orient="records"),
-}
-cartes_AL = {
-    "Ordinary": cartes_dfAL[cartes_dfAL["tipus"] == "Ordinary"].to_dict(orient="records"),
-    "Exceptional": cartes_dfAL[cartes_dfAL["tipus"] == "Exceptional"].to_dict(orient="records"),
-    "Elite": cartes_dfAL[cartes_dfAL["tipus"] == "Elite"].to_dict(orient="records"),
-    "Unique": cartes_dfAL[cartes_dfAL["tipus"] == "Unique"].to_dict(orient="records"),
-}
-
 cartes_dfGothic = pd.read_csv("FontGothic.csv")
 
-cartes_Gothic = {
-    "Ordinary": cartes_dfGothic[cartes_dfGothic["tipus"] == "Ordinary"].to_dict(orient="records"),
-    "Exceptional": cartes_dfGothic[cartes_dfGothic["tipus"] == "Exceptional"].to_dict(orient="records"),
-    "Elite": cartes_dfGothic[cartes_dfGothic["tipus"] == "Elite"].to_dict(orient="records"),
-    "Unique": cartes_dfGothic[cartes_dfGothic["tipus"] == "Unique"].to_dict(orient="records"),
-}
+# --- SEPARA PER TIPUS DE CARTA ---
+def separar_cartes(df):
+    return {
+        "Ordinary": df[df["tipus"] == "Ordinary"].to_dict(orient="records"),
+        "Exceptional": df[df["tipus"] == "Exceptional"].to_dict(orient="records"),
+        "Elite": df[df["tipus"] == "Elite"].to_dict(orient="records"),
+        "Unique": df[df["tipus"] == "Unique"].to_dict(orient="records"),
+    }
 
-
-
+cartes_Beta = separar_cartes(cartes_dfBeta)
+cartes_AL = separar_cartes(cartes_dfAL)
+cartes_Gothic = separar_cartes(cartes_dfGothic)
 cartes_DL = cartes_dfDL.to_dict(orient="records")
 
-
+# --- GENERADORS DE SOBRES ---
 def generar_sobre_Beta():
     sobre = []
-    
-    # 3 Exceptional
     sobre.extend(random.sample(cartes_Beta["Exceptional"], 3))
-    # 1 Elite o Unique
-    if random.random() < 0.76:  # 76% Elite
+    if random.random() < 0.76:
         sobre.append(random.choice(cartes_Beta["Elite"]))
-    else:  # 24% Unique
+    else:
         sobre.append(random.choice(cartes_Beta["Unique"]))
-    # 10 Ordinary
     sobre.extend(random.sample(cartes_Beta["Ordinary"], 10))
-    # 1 BoosterAvatar or BoosterSite
-    if random.random() < 0.05:  # 10% BoosterAvatarElite
+    if random.random() < 0.05:
         sobre.append(random.choice(cartes_Beta["BoosterAvatar"]))
-    else:  # 24% Unique
+    else:
         sobre.append(random.choice(cartes_Beta["Booster"]))
     return sobre
-    
+
 def generar_sobre_AL():
     sobre = []
-        # 3 Exceptional
     sobre.extend(random.sample(cartes_AL["Exceptional"], 3))
-    # 1 Elite o Unique
-    if random.random() < 0.8:  # 76% Elite
+    if random.random() < 0.8:
         sobre.append(random.choice(cartes_AL["Elite"]))
-    else:  # 24% Unique
+    else:
         sobre.append(random.choice(cartes_AL["Unique"]))
-    # 11 Ordinary
     sobre.extend(random.sample(cartes_AL["Ordinary"], 11))
-    
     return sobre
-    
+
 def generar_sobre_Gothic():
     sobre = []
-    # 3 Exceptional
     sobre.extend(random.sample(cartes_Gothic["Exceptional"], 3))
-    # 1 Elite o Unique
     if random.random() < 0.8:
         sobre.append(random.choice(cartes_Gothic["Elite"]))
     else:
         sobre.append(random.choice(cartes_Gothic["Unique"]))
-    # 11 Ordinary
     sobre.extend(random.sample(cartes_Gothic["Ordinary"], 11))
-    
     return sobre
 
 def generar_sobre_DL():
-    """Sempre retorna les 13 cartes fixes del pack DragonLord"""
     return cartes_DL.copy()
 
+# --- RUTES ---
 @app.route("/")
 def index():
     return render_template("index.html")
 
 @app.route("/Pack/<int:n>")
 def sobres(n):
-    return jsonify([generar_sobre() for _ in range(n)])
+    return jsonify([generar_sobre_Beta() for _ in range(n)])
 
-@app.route("/export_xlsx/<int:jocs>/<int:n1>/<int:n2>/<int:dl>")
-def export_xlsx(jocs, n1, n2, dl):
+@app.route("/export_xlsx/<int:jocs>/<int:beta>/<int:al>/<int:gothic>/<int:dl>")
+def export_xlsx(jocs, beta, al, gothic, dl):
     wb = Workbook()
     elem_order = {"DB": 0, "Air": 1, "Earth": 2, "Fire": 3, "Water": 4, "MC": 5}
 
-    # Validació: total sempre 9 (o 8+1 si hi ha DL)
-    if dl == 1 and (n1 + n2 != 35):
-        return Response("❌ Error: Si actives DragonLord, els Beta+AL han de sumar exactament 5.", status=400)
-    if dl == 0 and (n1 + n2 != 36):
-        return Response("❌ Error: Si NO actives DragonLord, els Beta+AL han de sumar exactament 6.", status=400)
+    total_sobres = beta + al + gothic
 
-    for jugador in range(1, jocs+1):
+    # Validacions igual que abans, però ara amb Gothic
+    if dl == 1 and total_sobres != 5:
+        return Response("❌ Error: Amb DragonLord activat, els sobres Beta+AL+Gothic han de sumar EXACTAMENT 5.", status=400)
+    if dl == 0 and total_sobres != 6:
+        return Response("❌ Error: Sense DragonLord, els sobres Beta+AL+Gothic han de sumar EXACTAMENT 6.", status=400)
+
+    # Generació per jugador
+    for jugador in range(1, jocs + 1):
+        ws = wb.active if jugador == 1 else wb.create_sheet(title=f"P{jugador}")
         if jugador == 1:
-            ws = wb.active
             ws.title = f"P{jugador}"
-        else:
-            ws = wb.create_sheet(title=f"P{jugador}")
 
         ws.append(["Avatars", "Spells", "Sites"])
 
         cartes_jugador = []
-        for _ in range(n1):
+
+        for _ in range(beta):
             cartes_jugador.extend(generar_sobre_Beta())
-        for _ in range(n2):
+        for _ in range(al):
             cartes_jugador.extend(generar_sobre_AL())
+        for _ in range(gothic):
+            cartes_jugador.extend(generar_sobre_Gothic())
         if dl == 1:
             cartes_jugador.extend(generar_sobre_DL())
 
         avatars = sorted([c["nom"] for c in cartes_jugador if c["cat"] == "Avatar"])
-        spells  = [c for c in cartes_jugador if c["cat"] == "Spell"]
-        sites   = sorted([c["nom"] for c in cartes_jugador if c["cat"] == "Site"])
+        spells = [c for c in cartes_jugador if c["cat"] == "Spell"]
+        sites = sorted([c["nom"] for c in cartes_jugador if c["cat"] == "Site"])
 
         spells_sorted = sorted(spells, key=lambda c: (elem_order.get(c["elem"], 99), c["nom"]))
         spells_names = [f"{c['nom']}" for c in spells_sorted]
@@ -146,9 +123,12 @@ def export_xlsx(jocs, n1, n2, dl):
     output = io.BytesIO()
     wb.save(output)
     output.seek(0)
-    return send_file(output, as_attachment=True,
-                     download_name="lots_jugadors.xlsx",
-                     mimetype="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+    return send_file(
+        output,
+        as_attachment=True,
+        download_name="lots_jugadors.xlsx",
+        mimetype="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    )
 
 
 if __name__ == "__main__":
